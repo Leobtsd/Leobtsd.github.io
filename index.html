@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo Uber</title>  
+    <link rel="stylesheet" href="index.css">
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Cálculo Uber</h1>
+        <form action="" method="get" id="uberForm">
+            <label for="km">Km do dia</label>
+            <input type="number" id="km">
+            <br>
+            <label for="ganhos">Ganhos do dia</label>
+            <input type="number" id="ganhos">
+            <br>
+            <label for="alcool">Quanto botou de álcool</label>
+            <input type="number" id="alcool" value="0">
+            <br>
+            <label for="gastos">Gasto por fora</label>
+            <input type="number" id="gastos" value="0">
+            <br>
+            <button type="submit">Calcular</button>
+        </form>
+    </div>
+
+    <div class="result-container" id="resultContainer">
+        <h2>Resultado</h2>
+        <p id="result"></p>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
