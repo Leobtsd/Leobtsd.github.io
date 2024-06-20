@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const divResul = document.getElementById('resultContainer');
     const p = document.getElementById('result');
     const mediaPorL = 11.80;
-    const precoGNV = 3.70;
+    const precoGNV = 4.70;
 
     const form = document.getElementById('uberForm');
     const historyContainer = document.getElementById('historyContainer');
