@@ -161,7 +161,7 @@ button:hover {
 @media (max-width: 600px) {
     .container, .result-container, .history-container {
         padding: 1rem;
-        width: 100%;
+        width: 85%;
     }
 
     body {
