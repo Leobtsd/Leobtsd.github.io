@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('uberForm');
     const historyContainer = document.getElementById('historyContainer');
     const historyList = document.getElementById('historyList');
+    const confirmModal = document.getElementById('confirmModal');
+    const confirmBtn = document.getElementById('confirmBtn');
+    const cancelBtn = document.getElementById('cancelBtn');
 
     // Carregar histórico do localStorage
     const history = JSON.parse(localStorage.getItem('history')) || [];
@@ -80,7 +83,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 const button = document.createElement('button');
                 button.textContent = 'Apagar';
                 button.addEventListener('click', () => {
-                    removeHistoryItem(history.indexOf(item));
+                    // Mostrar modal de confirmação
+                    confirmModal.style.display = 'block';
+
+                    // Quando o usuário confirma a exclusão
+                    confirmBtn.onclick = function() {
+                        removeHistoryItem(history.indexOf(item));
+                        confirmModal.style.display = 'none';
+                    };
+
+                    // Quando o usuário cancela a exclusão
+                    cancelBtn.onclick = function() {
+                        confirmModal.style.display = 'none';
+                    };
                 });
                 li.appendChild(span);
                 li.appendChild(button);
@@ -127,6 +142,14 @@ document.addEventListener('DOMContentLoaded', () => {
         // Atualizar a exibição do histórico
         updateHistoryDisplay();
     });
+
+    // Fechar o modal se o usuário clicar fora da área do modal
+    window.onclick = function(event) {
+        if (event.target === confirmModal) {
+            confirmModal.style.display = 'none';
+        }
+    };
 });
+
 
 
